@@ -1,0 +1,41 @@
+2015-02-22 04:58:35,446 [main] INFO  org.apache.pig.tools.pigstats.SimplePigStats - Script Statistics: 
+
+HadoopVersion	PigVersion	UserId	StartedAt	FinishedAt	Features
+1.1.0	0.10.0	ubuntu	2015-02-22 04:55:24	2015-02-22 04:58:35	HASH_JOIN,GROUP_BY
+
+Success!
+
+Job Stats (time in seconds):
+JobId	Maps	Reduces	MaxMapTime	MinMapTIme	AvgMapTime	MaxReduceTime	MinReduceTime	AvgReduceTime	Alias	Feature	Outputs
+job_201502220216_0030	1	0	2	2	2	0	0	0raw1,sub_raw1	MAP_ONLY	
+job_201502220216_0031	6	1	10	0	7	57	57	57	joinedTable,raw2	HASH_JOIN	
+job_201502220216_0032	8	1	7	3	5	41	41	41	groupedTable,temp	GROUP_BY,COMBINER	
+job_201502220216_0033	2	1	1	1	1	10	10	10	outputTable	HASH_JOIN	/home/ubuntu/Workspace/hadoop-1.1.0/hadoop-data/Query2-temp,
+job_201502220216_0034	1	0	2	2	2	0	0	0outputTable2,raw3	MAP_ONLY	/home/ubuntu/Workspace/hadoop-1.1.0/hadoop-data/Query2-final,
+
+Input(s):
+Successfully read 50000 records (1791298 bytes) from: "/home/ubuntu/Workspace/hadoop-1.1.0/hadoop-data/Customer"
+Successfully read 5000000 records from: "/home/ubuntu/Workspace/hadoop-1.1.0/hadoop-data/Transaction"
+Successfully read 50000 records (2961453 bytes) from: "/home/ubuntu/Workspace/hadoop-1.1.0/hadoop-data/Query2-temp"
+
+Output(s):
+Successfully stored 50000 records (2961041 bytes) in: "/home/ubuntu/Workspace/hadoop-1.1.0/hadoop-data/Query2-temp"
+Successfully stored 50000 records (2672147 bytes) in: "/home/ubuntu/Workspace/hadoop-1.1.0/hadoop-data/Query2-final"
+
+Counters:
+Total records written : 100000
+Total bytes written : 5633188
+Spillable Memory Manager spill count : 0
+Total bags proactively spilled: 0
+Total records proactively spilled: 0
+
+Job DAG:
+job_201502220216_0030	->	job_201502220216_0031,
+job_201502220216_0031	->	job_201502220216_0032,
+job_201502220216_0032	->	job_201502220216_0033,
+job_201502220216_0033	->	job_201502220216_0034,
+job_201502220216_0034
+
+
+2015-02-22 04:58:35,500 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - Success!
+
