@@ -6,6 +6,8 @@ jar -cvf /home/ubuntu/Workspace/project1/query3/Join.jar -C /home/ubuntu/Workspa
 
 hadoop jar /home/ubuntu/Workspace/project1/query3/Join.jar org.eric.Join /home/ubuntu/Workspace/hadoop-1.1.0/hadoop-data/Customer /home/ubuntu/Workspace/hadoop-1.1.0/hadoop-data/Transaction /home/ubuntu/Workspace/hadoop-1.1.0/hadoop-data/output
 
+hadoop fs -put /home/ubuntu/Workspace/project3/InitialPoints.txt /home/ubuntu/Workspace/hadoop-1.1.0/hadoop-data/project3/InitialPoints
+
 
 
 start-all.sh
